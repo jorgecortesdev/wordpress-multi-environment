@@ -2,11 +2,10 @@
 
 Este repositorio contiene una plantilla para generar una instalación de wordpress multi-ambiente.
 
-Sirve para comenzar un repositorio rápido e independiente de wordpress y sus plugins ya que
-esta enfocado más en el desarrollo del tema de la aplicación que al mantenimiento de wordpress.
+Sirve para comenzar un repositorio rápido e independiente de wordpress y sus plugins, la idea
+es estar enfocado más en el desarrollo del tema de la aplicación y no al mantenimiento de wordpress.
 
-Se utiliza composer para facilitar el manejo de versiones tanto para la versión de wordpress
-como de los plugins.
+Se utiliza composer para facilitar el manejo de versiones wordpress y plugins.
 
 ### Instalación ###
 
@@ -19,6 +18,19 @@ $ git remote -v
 $ git push -u origin --all
 $ git push -u origin --tags
 $ composer install
+```
+
+Debes cambiar el propietario de la carpeta app/uploads/ al usuario sobre el cual correo el servidor
+apache, en mi caso el usuario es _www, esto es para poder permitir a wordpress subir contenido.
+
+```
+$ sudo chown _www app/uploads
+```
+
+Si de inicio no cuentas con un tema en especifico tienes que copiar el tema default de wordpress.
+
+```
+$ cp -R wp/wp-content/themes/twentyfifteen app/themes
 ```
 
 Agrega el nuevo sitio a tu archivo de hosts:
