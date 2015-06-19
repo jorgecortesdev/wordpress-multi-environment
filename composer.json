@@ -1,4 +1,13 @@
 {
+    "name": "xort/wordpress-multi-environment",
+    "description": "Multi-environment wordpress template",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jorge Cortés",
+            "email": "jorge.cortes@gmail.com"
+        }
+    ],
     "repositories": [
         {
             "type": "composer",
@@ -10,6 +19,9 @@
         "johnpbloch/wordpress": "4.2.2"
     },
     "extra": {
-        "wordpress-install-dir": "wp"
+        "wordpress-install-dir": "wp",
+        "installer-paths": {
+            "app/plugins/{$name}/": ["type:wordpress-plugin"]
+        }
     }
 }
